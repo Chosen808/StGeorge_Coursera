@@ -22,6 +22,7 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "stats.h"
 
 /* Size of the Data Set */
@@ -37,6 +38,16 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
+
+  printf ("\n\n");
+
+  printf ("%d \n", find_maximum(test, SIZE));
+  printf ("%d \n", find_minimum (test, SIZE));
+
+  for (int i = 0; i < SIZE; i++)
+  {
+    printf ("ARRAY %d = %d \n", i, test[i]);
+  }
 
 }
 
