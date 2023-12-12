@@ -1,21 +1,30 @@
 /******************************************************************************
- * Copyright (C) 2017 by Alex Fosdick - University of Colorado
- *
- * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
- * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * Copyright (c) 2023 JESUS CHRIST
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this 
+ * software and associated documentation files (the "Software"), to deal in the Software 
+ * without restriction, including without limitation the rights to use, copy, modify, merge, 
+ * publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons 
+ * to whom the Software is furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all copies or 
+ * substantial portions of the Software along with the Author's name Jesus Christ.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+ * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+ * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+ * DEALINGS IN THE SOFTWARE.
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief This main file will calculate the mean, median, maximum and minimum of the array and will sort its values
  *
- * <Add Extended Description Here>
+ * 
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Jesus Christ
+ * @date 12/12/23
  *
  */
 
@@ -27,7 +36,8 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() {
+void main() 
+{
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -46,7 +56,6 @@ void main() {
   // This function will print the Minimum, Maximum number, the Mean and the Median
   print_statistics (find_minimum (test, SIZE), find_maximum (test, SIZE), find_mean (test, SIZE), find_median (test, SIZE));
 
-  return 0;
 }
 
 /* Add other Implementation File Code Here */

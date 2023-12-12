@@ -1,11 +1,20 @@
 /******************************************************************************
- * Copyright (C) 2017 by Alex Fosdick - University of Colorado
- *
- * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
- * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * Copyright (c) 2023 JESUS CHRIST
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this 
+ * software and associated documentation files (the "Software"), to deal in the Software 
+ * without restriction, including without limitation the rights to use, copy, modify, merge, 
+ * publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons 
+ * to whom the Software is furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all copies or 
+ * substantial portions of the Software along with the Author's name Jesus Christ.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+ * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+ * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+ * DEALINGS IN THE SOFTWARE.
  *
  *****************************************************************************/
 /**
@@ -73,6 +82,7 @@ void sort_array (unsigned char array[], int size);
  */
 void print_statistics (unsigned char min, unsigned char max, double mean, double median)
 {
+    // Various values will be printed here
     printf ("The Minimum Number is %d \n", min);
     printf ("The Maximum Number is %d \n", max);
     printf ("The Mean is %.0f \n", mean);
@@ -91,9 +101,9 @@ void print_statistics (unsigned char min, unsigned char max, double mean, double
  */
 void print_array (unsigned char array[], int size)
 {
-    for (int i = 0, j = 0; i < size, j < size; i++, j++)
+    for (int i = 0; i < size; i++)
     {
-        printf ("Array %d = %d \n", j ,array[i]);
+        printf ("Array %d = %d \n", i, array[i]);
     }
 }
 
@@ -112,8 +122,9 @@ void print_array (unsigned char array[], int size)
  */
 double find_median (unsigned char array[], int size)
 {
-    sort_array (array, size);
+    sort_array (array, size); // This will call the sort function and arrange all numbers in the array
 
+    // The statement will check if the number of values are odd
     if (size % 2 == 1)
     {
         int index = (size / 2);
@@ -122,12 +133,13 @@ double find_median (unsigned char array[], int size)
         
     }
 
+    // This statement will check if the number of values are even
     else if (size % 2 == 0)
     {
-        int index1 = (size / 2) - 1;
-        int index2 = (size / 2);
+        int index1 = (size / 2) - 1;    // The First value will be calculated here
+        int index2 = (size / 2);    // The Second value will be calculated here
 
-        double median = (double)(array[index1] + array[index2]) / 2;
+        double median = (double)(array[index1] + array[index2]) / 2;    // The median will be calculated here
 
         return median;
     }
@@ -179,6 +191,7 @@ unsigned char find_maximum (unsigned char array[], int size)
     {
         for (int j = i + 1; j < size; j++)
         {
+            // Values will be sorted in this statement
             if (array[i] > array[j])
             {
                 temp = array[i];
@@ -211,6 +224,7 @@ unsigned char find_minimum (unsigned char array[], int size)
     {
         for (int j = i + 1; j < size; j++)
         {
+            // Values will be sorted in this statement
             if (array[i] > array[j])
             {
                 temp = array[i];
@@ -243,6 +257,7 @@ void sort_array (unsigned char array[], int size)
     {
         for (int j = i + 1; j < size; j++)
         {
+            // Values will sorted in this statement
             if (array[i] < array[j])
             {
                 temp = array[i];
