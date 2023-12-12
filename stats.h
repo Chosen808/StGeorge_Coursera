@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /******************************************************************************
  * Copyright (c) 2023 JESUS CHRIST
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this 
@@ -143,6 +145,8 @@ double find_median (unsigned char array[], int size)
 
         return median;
     }
+
+    return 0.0;
 }
 
 /**

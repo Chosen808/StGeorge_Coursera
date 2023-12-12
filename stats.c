@@ -36,7 +36,7 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() 
+int main() 
 {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
@@ -56,6 +56,7 @@ void main()
   // This function will print the Minimum, Maximum number, the Mean and the Median
   print_statistics (find_minimum (test, SIZE), find_maximum (test, SIZE), find_mean (test, SIZE), find_median (test, SIZE));
 
+  return 0;
 }
 
 /* Add other Implementation File Code Here */
