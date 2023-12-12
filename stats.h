@@ -154,7 +154,7 @@ double find_mean (unsigned char array[], int size)
         sum += array[i];
     }
 
-    double average = (double)(sum / size);
+    double average = (double)sum / size;
 
     return average;
 }

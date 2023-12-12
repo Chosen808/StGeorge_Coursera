@@ -20,10 +20,9 @@
  */
 
 
-
+#include "stats.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "stats.h"
 
 /* Size of the Data Set */
 #define SIZE (40)
