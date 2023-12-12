@@ -36,19 +36,18 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+  // This function will sort the data
+  sort_array (test, SIZE);
 
-  printf ("\n\n");
+  // This function will print the sorted data array
+  print_array (test, SIZE);
 
-  printf ("%d \n", find_maximum(test, SIZE));
-  printf ("%d \n", find_minimum (test, SIZE));
+  puts ("\n\n");
 
-  for (int i = 0; i < SIZE; i++)
-  {
-    printf ("ARRAY %d = %d \n", i, test[i]);
-  }
+  // This function will print the Minimum, Maximum number, the Mean and the Median
+  print_statistics (find_minimum (test, SIZE), find_maximum (test, SIZE), find_mean (test, SIZE), find_median (test, SIZE));
 
+  return 0;
 }
 
 /* Add other Implementation File Code Here */
