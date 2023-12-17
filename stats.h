@@ -32,42 +32,7 @@
  *
  */
 #ifndef __STATS_H__
-#define __STATS_H__
-
-/*
-This function will print Minimum, Maximum Number, the Mean and Median
-*/ 
-void print_statistics (unsigned char min, unsigned char max, double mean, double median);
-
-/*
-This function will print the array
-*/
-void print_array (unsigned char array[], int size);
-
-/*
-This function will find the median of the data from the array
-*/
-double find_median (unsigned char array[], int size);
-
-/*
-This function will find the mean of the data from the array
-*/
-double find_mean (unsigned char array[], int size);
-
-/*
-This function will find the largest number in the array
-*/
-unsigned char find_maximum (unsigned char array[], int size);
-
-/*
-This function will find the smallest number in the array
-*/
-unsigned char find_minimum (unsigned char array[], int size);
-
-/*
-This function will sort the data in the array in Descending order
-*/
-void sort_array (unsigned char array[], int size);
+#define __STATS_H__ 
 
 /**
  * @brief This function will print Minimum, Maximum Number, the Mean and Median
@@ -82,14 +47,7 @@ void sort_array (unsigned char array[], int size);
  *
  * @return This function does not return any value.
  */
-void print_statistics (unsigned char min, unsigned char max, double mean, double median)
-{
-    // Various values will be printed here
-    printf ("The Minimum Number is %d \n", min);
-    printf ("The Maximum Number is %d \n", max);
-    printf ("The Mean is %.0f \n", mean);
-    printf ("The Median is %.0f \n", median);
-}
+void print_statistics (unsigned char min, unsigned char max, double mean, double median);
 
 /**
  * @brief This function will print the array
@@ -101,13 +59,7 @@ void print_statistics (unsigned char min, unsigned char max, double mean, double
  *
  * @return This function does not return any value.
  */
-void print_array (unsigned char array[], int size)
-{
-    for (int i = 0; i < size; i++)
-    {
-        printf ("Array %d = %d \n", i, array[i]);
-    }
-}
+void print_array (unsigned char array[], int size);
 
 /**
  * @brief This function will find the median of the data from the array
@@ -122,32 +74,7 @@ void print_array (unsigned char array[], int size)
  *
  * @return This function returns a double value.
  */
-double find_median (unsigned char array[], int size)
-{
-    sort_array (array, size); // This will call the sort function and arrange all numbers in the array
-
-    // The statement will check if the number of values are odd
-    if (size % 2 == 1)
-    {
-        int index = (size / 2);
-
-        return (double)array[index];
-        
-    }
-
-    // This statement will check if the number of values are even
-    else if (size % 2 == 0)
-    {
-        int index1 = (size / 2) - 1;    // The First value will be calculated here
-        int index2 = (size / 2);    // The Second value will be calculated here
-
-        double median = (double)(array[index1] + array[index2]) / 2;    // The median will be calculated here
-
-        return median;
-    }
-
-    return 0.0;
-}
+int find_median (unsigned char array[], int size);
 
 /**
  * @brief This function will find the mean of the data from the array
@@ -161,19 +88,7 @@ double find_median (unsigned char array[], int size)
  *
  * @return This function returns a double value.
  */
-double find_mean (unsigned char array[], int size)
-{
-    int sum = 0;
-
-    for (int i = 0; i < size; i++)
-    {
-        sum += array[i];
-    }
-
-    double average = (double)sum / size;
-
-    return average;
-}
+int find_mean (unsigned char array[], int size);
 
 /**
  * @brief This function will find the largest number in the array
@@ -187,26 +102,7 @@ double find_mean (unsigned char array[], int size)
  *
  * @return This function returns a unsigned char value.
  */
-unsigned char find_maximum (unsigned char array[], int size)
-{
-    unsigned char temp; 
-
-    for (int i = 0; i < size; i++)
-    {
-        for (int j = i + 1; j < size; j++)
-        {
-            // Values will be sorted in this statement
-            if (array[i] > array[j])
-            {
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
-        }
-    }
-
-    return array[size - 1];
-}
+unsigned char find_maximum (unsigned char array[], int size);
 
 /**
  * @brief This function will find the smallest number in the array
@@ -220,26 +116,7 @@ unsigned char find_maximum (unsigned char array[], int size)
  *
  * @return This function returns a unsigned char value.
  */
-unsigned char find_minimum (unsigned char array[], int size)
-{
-    unsigned char temp;
-
-    for (int i = 0; i < size; i++)
-    {
-        for (int j = i + 1; j < size; j++)
-        {
-            // Values will be sorted in this statement
-            if (array[i] > array[j])
-            {
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
-        }
-    }
-
-    return array[0];
-}
+unsigned char find_minimum (unsigned char array[], int size);
 
 /**
  * @brief This function will sort the data in the array in Descending order
@@ -253,23 +130,6 @@ unsigned char find_minimum (unsigned char array[], int size)
  *
  * @return This function returns no value.
  */
-void sort_array (unsigned char array[], int size)
-{
-    unsigned char temp;
-
-    for (int i = 0; i < size; i++)
-    {
-        for (int j = i + 1; j < size; j++)
-        {
-            // Values will sorted in this statement
-            if (array[i] < array[j])
-            {
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
-        }
-    }
-}
+void sort_array (unsigned char array[], int size);
 
 #endif /* __STATS_H__ */
